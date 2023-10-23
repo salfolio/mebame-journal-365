@@ -1,6 +1,6 @@
 import React from "react";
 import prompts from "../data/journal-prompts.json";
-import styles from "../components/journal-prompt.module.css";
+import styles from "../components/home.module.css";
 
 export default function JournalPrompt() {
   const today = new Date();
@@ -33,14 +33,13 @@ export default function JournalPrompt() {
   );
 
   return (
-    <div>
-      <div className={styles["header"]}>
-        <h1 className={styles["title"]}>Journal 365</h1>
-        <h2 className={styles['date']}>{formattedDate}</h2>
+    <div className={styles['body']}>
+      <div className={styles["date"]}>
+        <h2>{`Prompt for ${formattedDate}`}</h2>
       </div>
-      <div className={styles["body"]}>
+      <div className={styles["prompt"]}>
         {promptOfTheDay && (
-          <p className={styles["prompt"]}>{promptOfTheDay.prompt}</p>
+          <p>{promptOfTheDay.prompt}</p>
         )}
       </div>
     </div>
